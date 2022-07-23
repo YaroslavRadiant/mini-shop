@@ -1,0 +1,27 @@
+.productCard {
+  width: 30%;
+  border: 1px solid #000;
+  margin-bottom: 40px;
+  min-width: 290px;
+}
+.imagePlace {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(36, 33, 33);
+  color: antiquewhite;
+}
+.productInformation {
+  padding: 25px;
+}
+h3 {
+  margin-bottom: 20px;
+}
+p {
+  margin-bottom: 20px;
+}
+
+.buyButton {
+  width: 100%;
+}

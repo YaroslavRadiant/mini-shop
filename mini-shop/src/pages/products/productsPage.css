@@ -1,0 +1,8 @@
+.pageMargin {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  justify-content: space-between;
+}
