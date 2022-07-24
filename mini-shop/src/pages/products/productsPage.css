@@ -5,4 +5,5 @@
   flex-wrap: wrap;
   margin-top: 70px;
   justify-content: space-between;
+  gap: 20px;
 }

@@ -8,6 +8,7 @@ export default function Layout() {
       <header>
         <NavLink to="/products">Products</NavLink>
         <NavLink to="/cart">
+          <p>123</p>
           <button>Cart</button>
         </NavLink>
       </header>

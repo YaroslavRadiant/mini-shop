@@ -1,0 +1,74 @@
+{
+  "Iphone 4": {
+    "name": "Iphone 4",
+    "description": "Big cool nice",
+    "price": 50,
+    "key": 1
+  },
+  "Iphone 5": {
+    "name": "Iphone 5",
+    "description": "Big cool nice",
+    "price": 100,
+    "key": 2
+  },
+  "Iphone 6": {
+    "name": "Iphone 6",
+    "description": "Big cool nice",
+    "price": 200,
+    "key": 3
+  },
+  "Iphone 7": {
+    "name": "Iphone 7",
+    "description": "Big cool nice",
+    "price": 300,
+    "key": 4
+  },
+  "Iphone 8": {
+    "name": "Iphone 8",
+    "description": "Big cool nice",
+    "price": 350,
+    "key": 5
+  },
+  "Iphone X": {
+    "name": "Iphone X",
+    "description": "Big cool nice",
+    "price": 500,
+    "key": 6
+  },
+  "Iphone XS-Max": {
+    "name": "Iphone XS-Max",
+    "description": "Big cool nice",
+    "price": 600,
+    "key": 7
+  },
+  "Iphone 11": {
+    "name": "Iphone 11",
+    "description": "Big cool nice",
+    "price": 700,
+    "key": 8
+  },
+  "Iphone 12": {
+    "name": "Iphone 12",
+    "description": "Big cool nice",
+    "price": 1000,
+    "key": 9
+  },
+  "Iphone 13": {
+    "name": "Iphone 13",
+    "description": "Big cool nice",
+    "price": 1300,
+    "key": 10
+  },
+  "Iphone 13 mini": {
+    "name": "Iphone 13 mini",
+    "description": "Big cool nice",
+    "price": 1100,
+    "key": 11
+  },
+  "Iphone 13 S": {
+    "name": "Iphone 13 S",
+    "description": "Big cool nice",
+    "price": 1250,
+    "key": 12
+  }
+}

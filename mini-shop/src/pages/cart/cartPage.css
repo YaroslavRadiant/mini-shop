@@ -1,0 +1,14 @@
+.cartPageBlock {
+  width: 100%;
+  display: flex;
+}
+.itemsBlock {
+  width: 60%;
+  margin-right: 5%;
+}
+
+.formBlock {
+  border: 1px solid #000;
+  width: 35%;
+  height: 500px;
+}
