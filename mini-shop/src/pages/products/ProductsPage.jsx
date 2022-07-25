@@ -8,6 +8,7 @@ import { getDatabase, ref, onValue } from "firebase/database";
 import { useDispatch, useSelector } from "react-redux";
 import { addAllProducts } from "../../store/actions/productsActions";
 import startFirebase from "../../config/firebase";
+import { clearAllCart, increaseAmount } from "../../store/actions/cartActions";
 
 const db = startFirebase();
 
@@ -18,14 +19,10 @@ export default function ProductsPage() {
     const starCountRef = ref(db, "products/");
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
-      // console.log(data);
-      dispatch(addAllProducts(data));
-      // console.log("ok");
-    });
 
-    console.log(products);
+      dispatch(addAllProducts(data));
+    });
   }, []);
-  console.log(products);
 
   const renderProductCard = (card) => {
     return (
@@ -33,6 +30,7 @@ export default function ProductsPage() {
         name={card.name}
         description={card.description}
         price={card.price}
+        el={card}
       />
     );
   };
@@ -40,6 +38,7 @@ export default function ProductsPage() {
   return (
     <div>
       <div className="pageMargin">
+        <button onClick={() => dispatch(clearAllCart())}></button>
         {products.length ? products.map(renderProductCard) : <p>No products</p>}
       </div>
     </div>

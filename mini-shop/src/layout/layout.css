@@ -14,3 +14,11 @@ button {
 a {
   text-decoration: none;
 }
+.cartHeaderSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cartHeaderSection p {
+  margin: 0 20px 0 0;
+}
