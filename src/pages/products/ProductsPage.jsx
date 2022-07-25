@@ -38,7 +38,6 @@ export default function ProductsPage() {
   return (
     <div>
       <div className="pageMargin">
-        <button onClick={() => dispatch(clearAllCart())}></button>
         {products.length ? products.map(renderProductCard) : <p>No products</p>}
       </div>
     </div>

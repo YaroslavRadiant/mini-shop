@@ -26,8 +26,12 @@ const schema = yup.object().shape({
     .required(),
   phone: yup
     .string()
-    // .matches(phoneRegExp, "Phone number is not valid")
+    .matches(phoneRegExp, "Phone number is not valid")
     .required(),
+});
+
+schema.validate({ name: "jimmy", address: 11 }).catch(function(err) {
+  console.log(err);
 });
 
 export default function UserFormComponent() {
@@ -39,16 +43,13 @@ export default function UserFormComponent() {
   function writeNewPost(userData, cartData) {
     const db = getDatabase();
 
-    // A post entry.
     const postData = {
       userData: userData,
       purchases: cartData,
     };
 
-    // Get a key for a new Post.
     const newPostKey = push(child(ref(db), "posts")).key;
 
-    // Write the new post's data simultaneously in the posts list and the user's post list.
     const updates = {};
     updates["/orders/" + newPostKey] = postData;
     // updates["/user-posts/" + uid + "/" + newPostKey] = postData;
@@ -58,28 +59,18 @@ export default function UserFormComponent() {
 
   const onSubmit = (data) => {
     console.log({ data });
-    // writeNewPost(data, purchases);
+    writeNewPost(data, purchases);
     reset();
   };
+
   return (
-    <form onSubmit={()=>handleSubmit(onSubmit)}>
-      <input placeholder="Name" name="name" required />
-      {console.log(errors)}
-      <input
-        {...register("surname")}
-        placeholder="Surname"
-        name="surname"
-        required
-      />
-      {/* <p>{errors}</p> */}
-      <input
-        {...register("address")}
-        placeholder="Address"
-        name="address"
-        required
-      />
-      <input {...register("phone")} placeholder="Phone" name="phone" required />
-      {/* <p>{errors.phone?.message}</p> */}
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("name")} placeholder="Name" />
+      <input {...register("surname")} placeholder="Surname" />
+      {/* <p>{errors.surname?.message}</p> */}
+      <input {...register("address")} placeholder="Address" />
+      <input {...register("phone")} placeholder="Phone" />
+      <p>{errors}</p>
       <input type="submit" />
     </form>
   );

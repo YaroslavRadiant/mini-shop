@@ -7,7 +7,7 @@ export const getSumOfCity = createSelector(
   (products) => {
     if (products) {
       return products.reduce((accumulator, currentValue) => {
-        return accumulator + currentValue.price;
+        return accumulator + currentValue.price * currentValue.amount;
       }, 0);
     } else return 10;
   }

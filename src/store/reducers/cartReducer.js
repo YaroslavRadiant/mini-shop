@@ -2,6 +2,7 @@ import {
   ADD_PRODUCT_TO_CART,
   CLEAR_ALL_CART,
   INCREASE_AMOUNT,
+  DECREASE_AMOUNT,
 } from "../actions/cartActions";
 
 const initialState = {
@@ -17,10 +18,26 @@ const cartReducer = (state = initialState, action) => {
       return { ...state, cart: [] };
     }
     case INCREASE_AMOUNT: {
-      console.log(action);
-      const prod = state.cart.findIndex((el) => el.key === action.key);
+      console.log(action.payload);
+      // const prod = state.cart.findIndex((el) => el.key === action.key);
+      const newCart = state.cart.map((item) =>
+        item.key === action.payload
+          ? { ...item, amount: item.amount + 1 }
+          : item
+      );
+      return { ...state, cart: newCart };
+    }
+    case DECREASE_AMOUNT: {
+      console.log(action.payload);
+      // const prod = state.cart.findIndex((el) => el.key === action.key);
+      const newCart = state.cart.map((item) =>
+        item.key === action.payload
+          ? { ...item, amount: item.amount - 1 }
+          : item
+      );
+      const filteredCart = newCart.filter((el) => el.amount > 0);
 
-      return { ...state, cart: [...state.cart, prod.amount + 1] };
+      return { ...state, cart: filteredCart };
     }
     default:
       return state;

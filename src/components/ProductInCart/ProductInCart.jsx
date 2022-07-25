@@ -1,15 +1,13 @@
 import React from "react";
 import "./productInCart.css";
 import { useDispatch, useSelector } from "react-redux";
-import { increaseAmount } from "../../store/actions/cartActions";
+import {
+  increaseAmount,
+  decreaseAmount,
+} from "../../store/actions/cartActions";
 
-export default function ProductInCart({
-  name,
-  description,
-  price,
-  amount,
-  key,
-}) {
+export default function ProductInCart({ card }) {
+  const { name, description, price, amount, key } = card;
   const dispatch = useDispatch();
   return (
     <div className="productInCart">
@@ -22,7 +20,7 @@ export default function ProductInCart({
         <p>{price * amount}$</p>
       </div>
       <div className="amountBloc">
-        <button>-</button>
+        <button onClick={() => dispatch(decreaseAmount(key))}>-</button>
         <p>{amount}</p>
         <button onClick={() => dispatch(increaseAmount(key))}>+</button>
       </div>
