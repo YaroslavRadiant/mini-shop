@@ -20,3 +20,23 @@
   border: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
 }
+
+@media screen and (min-width: 300px) and (max-width: 1230px) {
+  .cartPageBlock {
+    flex-direction: column;
+  }
+  .itemsBlock {
+    width: 100%;
+    margin-right: 5%;
+  }
+  .formBlock {
+    width: 100%;
+  }
+  .clearCartButton {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+  }
+}

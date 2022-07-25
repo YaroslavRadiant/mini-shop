@@ -1,14 +1,16 @@
 import React from "react";
 import "./productInCart.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   increaseAmount,
   decreaseAmount,
 } from "../../store/actions/cartActions";
+import { PropTypes } from "prop-types";
 
 export default function ProductInCart({ card }) {
-  const { name, description, price, amount, key } = card;
   const dispatch = useDispatch();
+  const { name, description, price, amount, key } = card;
+
   return (
     <div className="productInCart">
       <div className="imageBlock">
@@ -27,3 +29,7 @@ export default function ProductInCart({ card }) {
     </div>
   );
 }
+
+ProductInCart.propTypes = {
+  card: PropTypes.object,
+};

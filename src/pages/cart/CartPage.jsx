@@ -11,7 +11,7 @@ export default function CartPage() {
   const dispatch = useDispatch();
 
   const renderProductsInCart = (card) => {
-    return <ProductInCart card={card} />;
+    return <ProductInCart key={card.key} card={card} />;
   };
 
   return (

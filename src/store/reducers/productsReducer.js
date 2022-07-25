@@ -1,7 +1,5 @@
 import { ADD_ALL_PRODUCTS } from "../actions/productsActions";
 
-// import products from "../../config/dbData";
-// products: products()
 const initialState = [];
 
 const productsReducer = (state = initialState, action) => {

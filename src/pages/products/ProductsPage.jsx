@@ -4,11 +4,10 @@ import "./productsPage.css";
 
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { ref, onValue } from "firebase/database";
 import { useDispatch, useSelector } from "react-redux";
 import { addAllProducts } from "../../store/actions/productsActions";
 import startFirebase from "../../config/firebase";
-import { clearAllCart, increaseAmount } from "../../store/actions/cartActions";
 
 const db = startFirebase();
 
@@ -31,14 +30,15 @@ export default function ProductsPage() {
         description={card.description}
         price={card.price}
         el={card}
+        key={card.key}
       />
     );
   };
-  // console.log(products.products.length);
+
   return (
     <div>
       <div className="pageMargin">
-        {products.length ? products.map(renderProductCard) : <p>No products</p>}
+        {products.length ? products.map(renderProductCard) : <p>Loading...</p>}
       </div>
     </div>
   );
