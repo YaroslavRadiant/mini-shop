@@ -17,7 +17,7 @@ export default function CartPage() {
         description={card.description}
         price={card.price}
         amount={card.amount}
-        key={card.key}
+        id={card.key}
       />
     );
   };
